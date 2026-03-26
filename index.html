@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cloud Architect & DevOps Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2937;
+      --danger: #f97373;
+      --success: #4ade80;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* Top nav */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: white;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.7);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3.1rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out, border-color 0.12s ease-out;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      color: #020617;
+      font-weight: 600;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 26px rgba(56, 189, 248, 0.6);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: #38bdf8;
+      color: var(--text);
+    }
+
+    .hero-right {
+      position: relative;
+      padding: 1.4rem;
+      border-radius: 1.4rem;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12), transparent 55%),
+                  #020617;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+
+    .hero-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.7);
+    }
+
+    .hero-name {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-role {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+    }
+
+    .meta-item {
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.75rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .meta-label {
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .meta-value {
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    .hero-clouds {
+      margin-top: 0.6rem;
+      padding-top: 0.7rem;
+      border-top: 1px dashed rgba(55, 65, 81, 0.8);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .hero-clouds span {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+    }
+
+    /* Experience */
+    .timeline {
+      border-left: 1px solid rgba(55, 65, 81, 0.9);
+      padding-left: 1.2rem;
+      margin-left: 0.4rem;
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.35rem;
+      top: 0.25rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #020617;
+      border: 2px solid #38bdf8;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-role {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .timeline-company {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .timeline-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-body {
+      font-size: 0.85rem;
+      color: #d1d5db;
+    }
+
+    .timeline-body ul {
+      margin-top: 0.3rem;
+      padding-left: 1.1rem;
+    }
+
+    .timeline-body li {
+      margin-bottom: 0.15rem;
+    }
+
+    /* Projects */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 55%),
+                  #020617;
+      border-radius: 1rem;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1rem;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-title {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .card-pill {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    .card-body {
+      color: #d1d5db;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.2rem;
+    }
+
+    .card-tags span {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      color: var(--muted);
+    }
+
+    .card-links {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      display: flex;
+      gap: 0.7rem;
+    }
+
+    .card-links a {
+      color: #38bdf8;
+    }
+
+    .card-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .skills-group {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 0.9rem;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 0.8rem;
+    }
+
+    .skills-group-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .skills-group ul {
+      list-style: none;
+    }
+
+    .skills-group li {
+      margin-bottom: 0.2rem;
+      color: #e5e7eb;
+    }
+
+    /* Metrics */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .metric {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 0.9rem;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .metric-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .metric-trend {
+      font-size: 0.7rem;
+      margin-top: 0.1rem;
+    }
+
+    .metric-trend.positive {
+      color: var(--success);
+    }
+
+    .metric-trend.negative {
+      color: var(--danger);
+    }
+
+    /* Contact */
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .contact-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 30rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-list {
+      font-size: 0.85rem;
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .contact-list span {
+      color: var(--muted);
+    }
+
+    .contact-list a {
+      color: #38bdf8;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 55%),
+                  #020617;
+      border-radius: 1rem;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1rem;
+      font-size: 0.8rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .contact-card-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-card-label {
+      color: var(--muted);
+    }
+
+    .contact-card-value {
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .skills-grid,
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .contact {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      nav {
+        font-size: 0.8rem;
+        gap: 1rem;
+      }
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .skills-grid,
+      .metrics {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      main {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo">
+        <div class="logo-mark">C</div>
+        <span>Cloud & DevOps</span>
+      </div>
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">
+          Designing resilient <span>cloud platforms</span> and shipping reliable <span>DevOps pipelines</span>.
+        </h1>
+        <p class="hero-subtitle">
+          Cloud Architect & DevOps Engineer focused on scalable infrastructure, secure platforms, and high‑velocity delivery.
+          I help teams move from ad‑hoc deployments to predictable, observable, and automated systems.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">AWS / Azure / GCP</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Platform Engineering</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            Let’s talk
+            <span>↗</span>
+          </a>
+          <a href="#projects" class="btn-ghost">
+            View projects
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-avatar">A</div>
+        <div class="hero-name">Your Name</div>
+        <div class="hero-role">Cloud Architect & DevOps Engineer</div>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            <div class="meta-label">Location</div>
+            <div class="meta-value">Sherbrooke, QC · Remote‑friendly</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Experience</div>
+            <div class="meta-value">7+ years</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Focus</div>
+            <div class="meta-value">Cloud platforms & delivery</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Status</div>
+            <div class="meta-value">Open to opportunities</div>
+          </div>
+        </div>
+
+        <div class="hero-clouds">
+          <span>AWS</span>
+          <span>Azure</span>
+          <span>GCP</span>
+          <span>Kubernetes</span>
+          <span>Terraform</span>
+          <span>GitHub Actions</span>
+          <span>Argo CD</span>
+          <span>Prometheus / Grafana</span>
+        </div>
+      </aside>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span></span>Impact at a glance</h2>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Deployment frequency</div>
+          <div class="metric-value">+4x</div>
+          <div class="metric-trend positive">Increased by introducing CI/CD & trunk‑based development.</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Lead time</div>
+          <div class="metric-value">‑65%</div>
+          <div class="metric-trend positive">Reduced from weeks to days with automated pipelines.</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Infra costs</div>
+          <div class="metric-value">‑30%</div>
+          <div class="metric-trend positive">Optimized via right‑sizing, autoscaling & spot strategies.</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Incidents</div>
+          <div class="metric-value">‑40%</div>
+          <div class="metric-trend positive">Improved reliability with SLOs, alerting & runbooks.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title"><span></span>Experience</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Senior Cloud Architect</div>
+              <div class="timeline-company">TechCorp · Hybrid</div>
+            </div>
+            <div class="timeline-meta">2021 – Present · AWS, Kubernetes, Terraform</div>
+          </div>
+          <div class="timeline-body">
+            Led the design and rollout of a multi‑account AWS landing zone and Kubernetes‑based platform
+            serving multiple product teams.
+            <ul>
+              <li>Defined reference architectures for microservices, event‑driven workloads, and data pipelines.</li>
+              <li>Implemented GitOps workflows with Argo CD and Terraform for consistent, auditable changes.</li>
+              <li>Introduced SLOs, centralized logging, and metrics dashboards to improve reliability and visibility.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">DevOps Engineer</div>
+              <div class="timeline-company">ProductCo · Remote</div>
+            </div>
+            <div class="timeline-meta">2018 – 2021 · Azure, Docker, CI/CD</div>
+          </div>
+          <div class="timeline-body">
+            Built and maintained CI/CD pipelines and infrastructure for a SaaS platform with global customers.
+            <ul>
+              <li>Automated build, test, and deployment workflows using Azure DevOps and GitHub Actions.</li>
+              <li>Containerized legacy services and migrated them to a managed Kubernetes environment.</li>
+              <li>Collaborated with developers to embed observability and performance budgets into services.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Systems Engineer</div>
+              <div class="timeline-company">InfraOps · On‑site</div>
+            </div>
+            <div class="timeline-meta">2016 – 2018 · Linux, Networking, Automation</div>
+          </div>
+          <div class="timeline-body">
+            Managed Linux servers, networking, and automation for on‑prem and hybrid environments.
+            <ul>
+              <li>Automated routine operations with Ansible and Python, reducing manual work and drift.</li>
+              <li>Implemented backup, DR, and patching strategies aligned with business SLAs.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title"><span></span>Selected projects</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Multi‑region Kubernetes platform</div>
+            <span class="card-pill">Platform</span>
+          </div>
+          <div class="card-body">
+            Designed a production‑grade Kubernetes platform across two AWS regions with automated failover,
+            GitOps deployments, and centralized observability.
+            <div class="card-tags">
+              <span>AWS</span><span>EKS</span><span>Argo CD</span><span>Terraform</span><span>Prometheus</span>
+            </div>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noreferrer">Architecture overview</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Self‑service environment provisioning</div>
+            <span class="card-pill">DevEx</span>
+          </div>
+          <div class="card-body">
+            Built a self‑service portal for developers to spin up ephemeral environments on demand using
+            Terraform modules and GitHub Actions.
+            <div class="card-tags">
+              <span>Terraform</span><span>GitHub Actions</span><span>Azure</span><span>DevEx</span>
+            </div>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noreferrer">Case study</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">Cost‑optimized data pipeline</div>
+            <span class="card-pill">Data</span>
+          </div>
+          <div class="card-body">
+            Re‑architected a batch data pipeline to use serverless and spot instances, cutting monthly
+            costs while improving throughput.
+            <div class="card-tags">
+              <span>GCP</span><span>BigQuery</span><span>Cloud Run</span><span>Cost optimization</span>
+            </div>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noreferrer">Write‑up</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title"><span></span>Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-group">
+          <div class="skills-group-title">Cloud</div>
+          <ul>
+            <li>AWS (EKS, ECS, RDS, Lambda, VPC)</li>
+            <li>Azure (AKS, App Service, Functions)</li>
+            <li>GCP (GKE, Cloud Run, Pub/Sub)</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">Containers & orchestration</div>
+          <ul>
+            <li>Docker, Kubernetes, Helm</li>
+            <li>Service mesh (Istio/Linkerd basics)</li>
+            <li>GitOps (Argo CD, Flux)</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">Infra & automation</div>
+          <ul>
+            <li>Terraform, CloudFormation</li>
+            <li>Ansible, Bash, Python</li>
+            <li>Policy as code (OPA, Conftest)</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">Delivery & reliability</div>
+          <ul>
+            <li>GitHub Actions, Azure DevOps, GitLab CI</li>
+            <li>Prometheus, Grafana, Loki, ELK</li>
+            <li>SLOs, incident response, runbooks</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title"><span></span>Contact</h2>
+      <div class="contact">
+        <div>
+          <p class="contact-text">
+            If you’re building or evolving a cloud platform, modernizing deployments, or improving reliability,
+            I’d be happy to talk. I’m especially interested in roles that blend architecture, hands‑on delivery,
+            and mentoring engineering teams.
+          </p>
+          <div class="contact-list">
+            <span>Email: <a href="mailto:you@example.com">you@example.com</a></span>
+            <span>LinkedIn: <a href="#" target="_blank" rel="noreferrer">linkedin.com/in/your‑profile</a></span>
+            <span>GitHub: <a href="#" target="_blank" rel="noreferrer">github.com/your‑handle</a></span>
+          </div>
+        </div>
+        <aside class="contact-card">
+          <div class="contact-card-row">
+            <span class="contact-card-label">Preferred roles</span>
+            <span class="contact-card-value">Cloud Architect, DevOps, Platform Engineer</span>
+          </div>
+          <div class="contact-card-row">
+            <span class="contact-card-label">Engagement</span>
+            <span class="contact-card-value">Full‑time · Contract · Advisory</span>
+          </div>
+          <div class="contact-card-row">
+            <span class="contact-card-label">Time zones</span>
+            <span class="contact-card-value">Americas · Europe overlap</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Your Name</span>
+      <span>Built with HTML & CSS · Deployed on your favorite cloud</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
