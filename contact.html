@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact — Cloud Architect & DevOps</title>
+  <title>Contact — Jack Bauer | Cloud Architect & DevOps Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main>
     <header>
       <div class="logo">
-        <div class="logo-mark">C</div>
+        <div class="logo-mark">JB</div>
         <span>Cloud & DevOps</span>
       </div>
       <nav>
@@ -17,26 +18,65 @@
         <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
     </header>
 
-    <h2 class="section-title"><span></span>Contact</h2>
+    <section class="reveal">
+      <h2 class="section-title"><span></span>Contact</h2>
+      <div class="contact">
+        <div>
+          <p class="contact-text">
+            If you’re building or evolving a cloud platform, modernizing deployments, or improving reliability,
+            I’d be happy to talk. I’m especially interested in roles that blend cloud architecture, hands‑on DevOps
+            delivery, and mentoring engineering teams.
+          </p>
+          <div class="contact-list">
+            <span>Email: <a href="mailto:you@example.com">you@example.com</a></span>
+            <span>LinkedIn: <a href="#" target="_blank" rel="noreferrer">linkedin.com/in/jack-bauer</a></span>
+            <span>GitHub: <a href="#" target="_blank" rel="noreferrer">github.com/jack-bauer</a></span>
+          </div>
 
-    <p class="contact-text">
-      I’m open to Cloud Architecture and DevOps roles involving cloud design, automation,
-      modernization, and reliability engineering.
-    </p>
+          <form class="contact-form">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" placeholder="Tell me about your project or role..."></textarea>
+            </label>
+            <button type="submit" class="btn-primary">Send message</button>
+          </form>
+        </div>
 
-    <div class="contact-list">
-      <span>Email: <a href="mailto:you@example.com">you@example.com</a></span>
-      <span>LinkedIn: <a href="#">linkedin.com/in/your-profile</a></span>
-      <span>GitHub: <a href="#">github.com/your-handle</a></span>
-    </div>
+        <aside class="contact-card">
+          <div class="contact-card-row">
+            <span class="contact-card-label">Preferred roles</span>
+            <span class="contact-card-value">Cloud Architect, DevOps Engineer</span>
+          </div>
+          <div class="contact-card-row">
+            <span class="contact-card-label">Engagement</span>
+            <span class="contact-card-value">Full‑time · Contract · Advisory</span>
+          </div>
+          <div class="contact-card-row">
+            <span class="contact-card-label">Time zones</span>
+            <span class="contact-card-value">Americas · Europe overlap</span>
+          </div>
+        </aside>
+      </div>
+    </section>
 
     <footer>
-      <span>© <span id="year"></span> Your Name</span>
+      <span>© <span id="year"></span> Jack Bauer</span>
+      <span>Cloud Architecture & DevOps Engineering</span>
     </footer>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
