@@ -2,34 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Skills — Cloud Architecture & DevOps</title>
+  <title>Skills — Jack Bauer | Cloud Architect & DevOps Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main>
     <header>
       <div class="logo">
-        <div class="logo-mark">C</div>
+        <div class="logo-mark">JB</div>
         <span>Cloud & DevOps</span>
       </div>
       <nav>
         <a href="index.html">Home</a>
         <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
+        <a href="skills.html" class="active">Skills</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <h2 class="section-title"><span></span>Skills</h2>
-
-    <div class="skills-grid">
-      <!-- Same skills groups as before -->
-    </div>
+    <section class="reveal">
+      <h2 class="section-title"><span></span>Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-group">
+          <div class="skills-group-title">Cloud platforms</div>
+          <ul>
+            <li>AWS (EKS, ECS, RDS, Lambda, VPC, CloudWatch)</li>
+            <li>Azure (AKS, App Service, Functions, Monitor)</li>
+            <li>GCP (GKE, Cloud Run, Pub/Sub, BigQuery)</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">Containers & orchestration</div>
+          <ul>
+            <li>Docker, Kubernetes, Helm</li>
+            <li>Service mesh (Istio / Linkerd basics)</li>
+            <li>GitOps (Argo CD, Flux)</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">Infrastructure & automation</div>
+          <ul>
+            <li>Terraform, CloudFormation</li>
+            <li>Ansible, Bash, Python</li>
+            <li>Policy as code (OPA, Conftest)</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">DevOps & reliability</div>
+          <ul>
+            <li>GitHub Actions, Azure DevOps, GitLab CI</li>
+            <li>Prometheus, Grafana, Loki, ELK</li>
+            <li>SLOs, incident response, runbooks</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">Architecture & design</div>
+          <ul>
+            <li>Well‑Architected Framework (AWS / Azure)</li>
+            <li>Multi‑region, high availability, DR strategies</li>
+            <li>Event‑driven and microservices architectures</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">Security & governance</div>
+          <ul>
+            <li>IAM design, least privilege, RBAC</li>
+            <li>Network segmentation, private connectivity</li>
+            <li>Compliance‑ready baselines & guardrails</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-title">Collaboration</div>
+          <ul>
+            <li>Technical leadership & mentoring</li>
+            <li>Working with product & security teams</li>
+            <li>Documentation & knowledge sharing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <footer>
-      <span>© <span id="year"></span> Your Name</span>
+      <span>© <span id="year"></span> Jack Bauer</span>
+      <span>Cloud Architecture & DevOps Engineering</span>
     </footer>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
