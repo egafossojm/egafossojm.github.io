@@ -2,34 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Experience — Cloud Architect & DevOps</title>
+  <title>Experience — Jack Bauer | Cloud Architect & DevOps Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main>
     <header>
       <div class="logo">
-        <div class="logo-mark">C</div>
+        <div class="logo-mark">JB</div>
         <span>Cloud & DevOps</span>
       </div>
       <nav>
         <a href="index.html">Home</a>
+        <a href="experience.html" class="active">Experience</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <h2 class="section-title"><span></span>Experience</h2>
+    <section class="reveal">
+      <h2 class="section-title"><span></span>Experience</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Senior Cloud Architect</div>
+              <div class="timeline-company">TechCorp · Hybrid</div>
+            </div>
+            <div class="timeline-meta">2021 – Present · AWS, Kubernetes, Terraform</div>
+          </div>
+          <div class="timeline-body">
+            Led the design and rollout of a multi‑account AWS landing zone and Kubernetes‑based platform
+            serving multiple product teams.
+            <ul>
+              <li>Defined cloud reference architectures for microservices, event‑driven workloads, and data platforms.</li>
+              <li>Implemented GitOps workflows with Argo CD and Terraform for consistent, auditable infrastructure changes.</li>
+              <li>Introduced SLOs, centralized logging, and metrics dashboards to improve reliability and visibility.</li>
+              <li>Partnered with security to embed guardrails, IAM standards, and policy‑as‑code across environments.</li>
+            </ul>
+          </div>
+        </article>
 
-    <div class="timeline">
-      <!-- Same timeline content as before -->
-    </div>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">DevOps Engineer</div>
+              <div class="timeline-company">ProductCo · Remote</div>
+            </div>
+            <div class="timeline-meta">2018 – 2021 · Azure, Docker, CI/CD</div>
+          </div>
+          <div class="timeline-body">
+            Built and maintained CI/CD pipelines and infrastructure for a SaaS platform with global customers.
+            <ul>
+              <li>Automated build, test, and deployment workflows using Azure DevOps and GitHub Actions.</li>
+              <li>Containerized legacy services and migrated them to a managed Kubernetes environment.</li>
+              <li>Collaborated with developers to embed observability, performance budgets, and deployment strategies.</li>
+              <li>Reduced deployment risk by introducing blue‑green and canary releases for critical services.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Systems Engineer</div>
+              <div class="timeline-company">InfraOps · On‑site</div>
+            </div>
+            <div class="timeline-meta">2016 – 2018 · Linux, Networking, Automation</div>
+          </div>
+          <div class="timeline-body">
+            Managed Linux servers, networking, and automation for on‑prem and hybrid environments.
+            <ul>
+              <li>Automated routine operations with Ansible and Python, reducing manual work and configuration drift.</li>
+              <li>Implemented backup, DR, and patching strategies aligned with business SLAs.</li>
+              <li>Worked closely with application teams to prepare workloads for cloud migration.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <footer>
-      <span>© <span id="year"></span> Your Name</span>
+      <span>© <span id="year"></span> Jack Bauer</span>
+      <span>Cloud Architecture & DevOps Engineering</span>
     </footer>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
