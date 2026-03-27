@@ -146,6 +146,7 @@ section {
 .hero-title span {
   background: linear-gradient(to right, var(--accent), var(--accent2));
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
